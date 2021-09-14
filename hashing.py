@@ -1,0 +1,36 @@
+import hashlib, bcrypt #install bcrypt first on ur python
+
+psswd = input("input password to hash : ")
+
+def sha1_encrypt():
+  print("\nSHA1\n")
+  setpsswd = bytes(psswd, 'utf-8')
+  hash_object = hashlib.sha1(setpsswd).hexdigest()
+  print(hash_object)
+
+def md5_encrypt():
+  print("\nMD5\n")
+  setpsswd = bytes(psswd, 'utf-8')
+  hash_object = hashlib.md5(setpsswd).hexdigest()
+  print(hash_object)
+
+def bcrypt_encrypt():
+  print("\nBCRYPT\n")
+  setpsswd = bytes(psswd, 'utf-8')
+  hash_object = bcrypt.hashpw(setpsswd, bcrypt.gensalt(10))
+  print(hash_object)
+
+print("methods to choose : \n")
+print("1. SHA1")
+print("2. MD5")
+print("3. BCRYPT")
+methods = input('ur methods :')
+
+if int(methods) == 1 :
+  sha1_encrypt()
+elif int(methods) == 2 :
+  md5_encrypt()
+elif int(methods) == 3 :
+  bcrypt_encrypt()
+else :
+  print('there is no that methods aborting...')
