@@ -9,6 +9,7 @@ $cd hashpy-bruteforce.git
 $python bruteforce.py
 ```
 ## How to use ?
+- install python3 on ur computer
 - open up ur terminal and open bruteforce.py
 - insert ur md5/sha1 hash
 - choose methods
