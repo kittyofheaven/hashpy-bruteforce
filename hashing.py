@@ -34,3 +34,11 @@ elif int(methods) == 3 :
   bcrypt_encrypt()
 else :
   print('there is no that methods aborting...')
+
+
+"""
+author = shironeko 
+website = github.com/kittyofheaven
+
+feel free to use this script as educational purpose ONLY ,i'll be not responsible for any action user do with this script
+"""
