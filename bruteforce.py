@@ -60,9 +60,11 @@ def cracking(methods, psswd_hash):
 
   elif psswd_length == 0 : 
 
+    i = 0
     while (hashed_guess != psswd_hash):
-      guess = random.choices(characters_list, k=int(psswd_length))
+      guess = random.choices(characters_list, k=i)
       guess =''.join(guess)
+      i += 1
       print(guess)
       if int(hash_type) == 1 :
         print(guess)
