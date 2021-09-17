@@ -10,9 +10,9 @@ def clear():
     else:
         system('clear')
 
-characters = "012345689abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ/.,!?-+<>"
-characters_only = "012345689abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-lowercase_only = "012345689abcdefghijklmnopqrstuvwxyz"
+charactercharacters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ/.,!?-+<>"
+characters_only = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+lowercase_only = "0123456789abcdefghijklmnopqrstuvwxyz"
 #list_of_common_password = str(urlopen())
 
 user_psswd_hash = input('input hash to crack :')
