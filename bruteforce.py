@@ -3,6 +3,7 @@ import random
 from urllib.request import urlopen, hashlib 
 from os import system, name
 from time import sleep
+from itertools import product
 
 def clear():
     if name == 'nt':
@@ -10,6 +11,7 @@ def clear():
     else:
         system('clear')
 
+characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ/.,!?-+<>"
 charactercharacters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ/.,!?-+<>"
 characters_only = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 lowercase_only = "0123456789abcdefghijklmnopqrstuvwxyz"
@@ -36,27 +38,39 @@ clear()
 
 def cracking(methods, psswd_hash):
   methods_dict = {'1' : characters, '2' : characters_only, '3' : lowercase_only,}
+  characters_str = methods_dict[methods]
   characters_list = list(methods_dict[methods])
-  
+  char_prod = product(characters_str, repeat = psswd_length)
+
   guess = ''
   hashed_guess = ''
 
   if psswd_length != 0 :
-
-    while (hashed_guess != psswd_hash):
-      guess = random.choices(characters_list, k=psswd_length)
-      guess =''.join(guess)
-      print(guess)
-      if int(hash_type) == 1 :
+    
+    for each_char in char_prod :
+      if hashed_guess != psswd_hash :
+        guess = ''.join(each_char)
         print(guess)
-        hashed_guess = hashlib.sha1(bytes(guess, 'utf-8')).hexdigest()
-      elif int(hash_type) == 2 : 
-        print(guess)
-        hashed_guess = hashlib.md5(bytes(guess, 'utf-8')).hexdigest()
+        if int(hash_type) == 1 :
+          print(guess)
+          hashed_guess = hashlib.sha1(bytes(guess, 'utf-8')).hexdigest()
+        elif int(hash_type) == 2 : 
+          print(guess)
+          hashed_guess = hashlib.md5(bytes(guess, 'utf-8')).hexdigest()
+        else :
+          print("user hash method choice invalid try again")
+          exit()
       else :
-        print("user hash method choice invalid try again")
-        exit()
-    clear()
+        break
+      clear()
+    
+    
+
+
+  #   while (hashed_guess != psswd_hash):
+  #     guess = random.choices(characters_list, k=psswd_length)
+  #     guess =''.join(guess)
+      
 
   elif psswd_length == 0 : 
 
@@ -75,8 +89,8 @@ def cracking(methods, psswd_hash):
         exit()
     clear()
 
-  else :
-    pass
+   else :
+     pass
 
   if hashed_guess == psswd_hash : 
     print("password match found! : " + guess)
