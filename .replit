@@ -1,0 +1,2 @@
+run = "python bruteforce.py"
+language = "python3" # optional
