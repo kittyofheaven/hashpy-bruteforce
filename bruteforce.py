@@ -89,8 +89,8 @@ def cracking(methods, psswd_hash):
         exit()
     clear()
 
-   else :
-     pass
+  else :
+    pass
 
   if hashed_guess == psswd_hash : 
     print("password match found! : " + guess)
