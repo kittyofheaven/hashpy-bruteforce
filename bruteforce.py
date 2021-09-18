@@ -20,7 +20,6 @@ numbers_only = "0123456789"
 #modify this variable
 user_defined_chara = "input ur defined chara here" 
 
-
 user_psswd_hash = input('input hash to crack :')
 clear()
 
