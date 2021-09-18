@@ -17,6 +17,10 @@ lowercase_only = "0123456789abcdefghijklmnopqrstuvwxyz"
 numbers_only = "0123456789"
 #list_of_common_password = str(urlopen())
 
+#modify this variable
+user_defined_chara = "input ur defined chara here" 
+
+
 user_psswd_hash = input('input hash to crack :')
 clear()
 
@@ -31,6 +35,7 @@ print("1. all_characters (with symbol)")
 print("2. characters_only (with uppercase & lowercase)")
 print("3. lowercase_only (lowercase only)")
 print("4. numbers only ")
+print("5. user defined chara (setup tutor on https://github.com/kittyofheaven/hashpy-bruteforce)")
 user_method_choice = input("your choice : ")
 clear()
 
@@ -38,7 +43,7 @@ psswd_length = int(input("password length (insert 0 if u dont know) : "))
 clear()
 
 def cracking(methods, psswd_hash):
-  methods_dict = {'1' : characters, '2' : characters_only, '3' : lowercase_only, '4' : numbers_only}
+  methods_dict = {'1' : characters, '2' : characters_only, '3' : lowercase_only, '4' : numbers_only, '5' : user_defined_chara, }
   characters_str = methods_dict[methods]
   characters_list = list(methods_dict[methods])
   char_prod = product(characters_str, repeat = psswd_length)
