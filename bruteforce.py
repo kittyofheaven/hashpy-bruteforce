@@ -74,20 +74,43 @@ def cracking(methods, psswd_hash):
 
   elif psswd_length == 0 : 
 
+    dunno = 1
     while (hashed_guess != psswd_hash):
-      guess = random.choices(characters_list, k=int(psswd_length))
-      guess =''.join(guess)
-      print(guess)
-      if int(hash_type) == 1 :
-        print(guess)
-        hashed_guess = hashlib.sha1(bytes(guess, 'utf-8')).hexdigest()
-      elif int(hash_type) == 2 : 
-        print(guess)
-        hashed_guess = hashlib.md5(bytes(guess, 'utf-8')).hexdigest()
-      else :
-        print("user hash method choice invalid, try again!")
-        exit()
-    clear()
+
+      for each_char in product(characters_str, repeat = dunno) :
+
+        if hashed_guess != psswd_hash :
+          guess = ''.join(each_char)
+          print(guess)
+          if int(hash_type) == 1 :
+            print(guess)
+            hashed_guess = hashlib.sha1(bytes(guess, 'utf-8')).hexdigest()
+          elif int(hash_type) == 2 : 
+            print(guess)
+            hashed_guess = hashlib.md5(bytes(guess, 'utf-8')).hexdigest()
+          else :
+            print("user hash method choice invalid try again")
+            exit()
+        else :
+          break
+          
+        clear()
+      dunno += 1
+      
+    # while (hashed_guess != psswd_hash):
+    #   guess = random.choices(characters_list, k=int(psswd_length))
+    #   guess =''.join(guess)
+    #   print(guess)
+    #   if int(hash_type) == 1 :
+    #     print(guess)
+    #     hashed_guess = hashlib.sha1(bytes(guess, 'utf-8')).hexdigest()
+    #   elif int(hash_type) == 2 : 
+    #     print(guess)
+    #     hashed_guess = hashlib.md5(bytes(guess, 'utf-8')).hexdigest()
+    #   else :
+    #     print("user hash method choice invalid, try again!")
+    #     exit()
+    # clear()
 
   else :
     pass
