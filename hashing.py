@@ -1,5 +1,10 @@
 import hashlib #,bcrypt #install bcrypt first on ur python
-
+print(r"""_  _  __  ____ _  _   ____ _  __   
+/ )( \/ _\/ ___/ )( \ (  _ ( \/ )  
+) __ /    \___ ) __ (_ ) __/)  /  
+\_)(_\_/\_(____\_)(_(_(__) (__/    
+by : kittyofheaven
+""")
 psswd = input("input password to hash : ")
 
 def sha1_encrypt():
