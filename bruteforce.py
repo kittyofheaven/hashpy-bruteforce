@@ -20,6 +20,12 @@ numbers_only = "0123456789"
 #modify this variable
 user_defined_chara = "input ur defined chara here" 
 
+print(r"""_  _  __  ____ _  _   ____ _  _    ____ ____ _  _ ____ ____ ____ __ ____  ___ ____ 
+/ )( \/ _\/ ___/ )( \ (  _ ( \/ )  (  _ (  _ / )( (_  _(  __(  __/  (  _ \/ __(  __)
+) __ /    \___ ) __ (_ ) __/)  /    ) _ ()   ) \/ ( )(  ) _) ) _(  O )   ( (__ ) _) 
+\_)(_\_/\_(____\_)(_(_(__) (__/    (____(__\_\____/(__)(____(__) \__(__\_)\___(____)
+by : kittyofheaven
+""")
 user_psswd_hash = input('input hash to crack :')
 clear()
 
